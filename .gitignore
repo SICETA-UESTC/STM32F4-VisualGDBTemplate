@@ -3,5 +3,4 @@ VisualGDB/
 Debug/
 Release/
 VisualGDBCache/
-
-.user
+*.user

@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{dd1cdb34-665d-49a5-bc7b-395853191dc6}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{399efdea-8721-4c0c-8fbf-b2db6955deb5}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{9dad4320-93f8-4c3e-9eb1-106669d80004}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{eb6ef4a2-e073-4130-a887-16007f5a072c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Applications">
+      <UniqueIdentifier>{639e9a82-cff8-47e1-aa49-d15024591e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Applications">
+      <UniqueIdentifier>{e259d8e9-d869-496a-926b-77efed378000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\BSP">
+      <UniqueIdentifier>{98f04f99-11c4-4e73-858a-fda5c51e1d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\BSP">
+      <UniqueIdentifier>{b04a0a49-244b-4439-83d4-2421d28e5404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Drivers">
+      <UniqueIdentifier>{3b6d19b1-fd0a-43ea-a627-d1ff3fe75bfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Drivers\HAL">
+      <UniqueIdentifier>{35b5a667-d0b2-4fcf-9500-69726d581c70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Drivers\USB Device">
+      <UniqueIdentifier>{5654c270-fb6b-4b7a-8919-73af815b7c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Drivers\FatFs">
+      <UniqueIdentifier>{a909afeb-486b-4da8-b810-10cc65dd5221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Drivers">
+      <UniqueIdentifier>{19fc1d42-8765-4740-b752-431facb70b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Drivers\HAL">
+      <UniqueIdentifier>{23cbb68f-a672-457b-9d1e-9acf353e9c62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Drivers\USB Device">
+      <UniqueIdentifier>{61683cc5-d86b-4070-a79a-e5e1a6161374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Drivers\FatFs">
+      <UniqueIdentifier>{7d342a22-597d-4476-adc9-bec6405cebb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Drivers\CMSIS">
+      <UniqueIdentifier>{82e870d5-9677-4646-bd14-3060da8a2497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Drivers\CMSIS">
+      <UniqueIdentifier>{b6badba2-6c5b-4a13-861b-06b5c7ff6fa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\System">
+      <UniqueIdentifier>{b476472b-86cf-4dc2-8a12-0e78d1036b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\System">
+      <UniqueIdentifier>{f4062e55-a026-4966-89ce-605ce527e059}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="STM32F4-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="STM32F4-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="stm32.xml">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <ClCompile Include="Src\w25qxx.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\usb_device.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\usbd_cdc_if.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\usbd_conf.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\usbd_desc.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\system_stm32f4xx.c">
+      <Filter>Source files\Drivers\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cec.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_crc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cryp.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cryp_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dac.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dac_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dcmi.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dcmi_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dfsdm.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma2d.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dsi.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_fmpi2c.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_fmpi2c_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_hash.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_hash_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_hcd.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_irda.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_lptim.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_ltdc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_ltdc_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_mmc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_nand.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_nor.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pccard.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_qspi.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rng.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sai.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sai_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sd.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sdram.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_smartcard.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spdifrx.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_wwdg.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_adc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_crc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dac.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_dma2d.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_exti.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fmc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_gpio.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_i2c.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_lptim.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_pwr.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rng.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rtc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_sdmmc.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_tim.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usart.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_utils.c">
+      <Filter>Source files\Drivers\HAL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\ad7606.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\zlg7290.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\dma.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\fsmc.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\i2c.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\spi.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\tim.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\usart.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\adc.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ad9959.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\sram.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\frequency_sweep.h">
+      <Filter>Header files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\pe4302.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\number_input.h">
+      <Filter>Header files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ascii.h">
+      <Filter>Resource files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\big_number.h">
+      <Filter>Resource files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\pattern.h">
+      <Filter>Resource files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\lmh6518.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\oscilloscope.h">
+      <Filter>Header files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\dac.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ads8694.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\spectrum.h">
+      <Filter>Header files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\nt35510.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ili9341.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\colors.h">
+      <Filter>Resource files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\w25qxx.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\usb_device.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\usbd_cdc_if.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\usbd_conf.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\usbd_desc.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\arm_common_tables.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\arm_const_structs.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\arm_math.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\cmsis_gcc.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_cm4.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_cmFunc.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_cmInstr.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_cmSimd.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_sc000.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Include\core_sc300.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32_assert_template.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cec.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_crc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cryp.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cryp_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dcmi.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dcmi_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma2d.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dsi.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_eth.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_fmpi2c.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_fmpi2c_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hash.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hash_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2s_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_irda.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_iwdg.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_ltdc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_ltdc_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_nand.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_nor.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pccard.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_qspi.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rng.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rtc_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sai.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sai_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sd.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sdram.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_smartcard.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spdifrx.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sram.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_wwdg.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_adc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_bus.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_cortex.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_crc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_dac.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_dma.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_dma2d.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_exti.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_fmc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_fsmc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_i2c.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_iwdg.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_lptim.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_pwr.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rcc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rng.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rtc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_sdmmc.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_spi.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_system.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_tim.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_utils.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_wwdg.h">
+      <Filter>Header files\Drivers\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Device\ST\STM32F4xx\Include\stm32f4xx.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Device\ST\STM32F4xx\Include\stm32f407xx.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\goose\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32F4xxxx\CMSIS_HAL\Device\ST\STM32F4xx\Include\system_stm32f4xx.h">
+      <Filter>Header files\Drivers\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\stm32f4xx_hal_conf.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ring_buffer.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\dcmi.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ov2640.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ili9325.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\frame_buffer.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\curve_chart.h">
+      <Filter>Header files\Applications</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\redirect_stdio.h">
+      <Filter>Header files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_core.h">
+      <Filter>Header files\Drivers\USB Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h">
+      <Filter>Header files\Drivers\USB Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h">
+      <Filter>Header files\Drivers\USB Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h">
+      <Filter>Header files\Drivers\USB Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc\usbd_cdc.h">
+      <Filter>Header files\Drivers\USB Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\fatfs.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ffconf.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\sd_diskio.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\Third_Party\FatFs\Inc\diskio.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\Third_Party\FatFs\Inc\ff.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\Third_Party\FatFs\Inc\ff_gen_drv.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Middlewares\Third_Party\FatFs\Inc\integer.h">
+      <Filter>Header files\Drivers\FatFs</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\bsp_driver_sd.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\led.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\lcd.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\ad7606.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\zlg7290.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\dma.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\fsmc.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\i2c.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\spi.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\tim.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\usart.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\adc.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ad9959.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\sram.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\frequency_sweep.c">
+      <Filter>Source files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\pe4302.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\number_input.c">
+      <Filter>Source files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\oscilloscope.c">
+      <Filter>Source files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\lmh6518.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\dac.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ads8694.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\spectrum.c">
+      <Filter>Source files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\STM32F4xxxx\StartupFiles\startup_stm32f407xx.c">
+      <Filter>Source files\Drivers\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ring_buffer.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\dcmi.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ov2640.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\frame_buffer.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\curve_chart.c">
+      <Filter>Source files\Applications</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\nt35510.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ili9341.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\redirect_stdio.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c">
+      <Filter>Source files\Drivers\USB Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c">
+      <Filter>Source files\Drivers\USB Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c">
+      <Filter>Source files\Drivers\USB Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c">
+      <Filter>Source files\Drivers\USB Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\sd_diskio.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\fatfs.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\Third_Party\FatFs\Src\cc936.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\Third_Party\FatFs\Src\diskio.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\Third_Party\FatFs\Src\ff.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Middlewares\Third_Party\FatFs\Src\ff_gen_drv.c">
+      <Filter>Source files\Drivers\FatFs</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\bsp_driver_sd.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\sdio.c">
+      <Filter>Source files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\led.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ili9325.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\lcd.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stm32.props">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+</Project>
