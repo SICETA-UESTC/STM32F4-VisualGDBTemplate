@@ -46,17 +46,12 @@
   ******************************************************************************
   */
 
-#ifdef OLD_API
-/* kept to avoid issue when migrating old projects. */
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-#else
 /* USER CODE BEGIN FirstSection */
 /* can be used to modify / undefine following code or add new definitions */
 /* USER CODE END FirstSection */
 /* Includes ------------------------------------------------------------------*/
-#include "bsp_driver_sd.h"
+#include "sdio.h"
+#include "bsp_sdio_sd.h"
 
 /* Extern variables ---------------------------------------------------------*/
 
@@ -78,6 +73,7 @@ uint8_t BSP_SD_Init(void)
         return MSD_ERROR;
     }
     /* HAL SD initialization */
+    SDIO_SD_Init();
     sd_state = HAL_SD_Init(&hsd);
     /* Configure SD Bus width (4 bits mode selected) */
     if (sd_state == MSD_OK)
@@ -344,7 +340,6 @@ __weak void BSP_SD_ReadCpltCallback(void)
 {
 }
 /* USER CODE END CallBacksSection_C */
-#endif
 
 /**
  * @brief  Detects if SD card is correctly plugged in the memory slot or not.

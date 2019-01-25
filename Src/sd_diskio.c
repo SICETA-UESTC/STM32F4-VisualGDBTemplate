@@ -61,6 +61,7 @@
  * in case of errors in either BSP_SD_ReadCpltCallback() or BSP_SD_WriteCpltCallback()
  * the value by default is as defined in the BSP platform driver otherwise 30 secs
  */
+
 #define SD_TIMEOUT 30 * 1000
 
 #define SD_DEFAULT_BLOCK_SIZE 512
@@ -178,6 +179,8 @@ DSTATUS SD_status(BYTE lun)
 DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 {
     DRESULT res = RES_ERROR;
+
+#if SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SDIO
     ReadStatus = 0;
     uint32_t timeout;
 #if (ENABLE_SD_DMA_CACHE_MAINTENANCE == 1)
@@ -222,6 +225,17 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
         }
     }
 
+#elif SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SPI
+    if (BSP_SD_ReadBlocks((uint32_t*)buff,
+        (uint32_t)(sector),
+        count, SD_TIMEOUT) == MSD_OK)
+    {
+        /* wait until the read operation is finished */
+        while (BSP_SD_GetCardState() != MSD_OK) {}
+        res = RES_OK;
+    }
+#endif
+
     return res;
 }
 
@@ -240,6 +254,8 @@ DRESULT SD_read(BYTE lun, BYTE *buff, DWORD sector, UINT count)
 DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
 {
     DRESULT res = RES_ERROR;
+
+#if SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SDIO
     WriteStatus = 0;
     uint32_t timeout;
 #if (ENABLE_SD_DMA_CACHE_MAINTENANCE == 1)
@@ -283,6 +299,17 @@ DRESULT SD_write(BYTE lun, const BYTE *buff, DWORD sector, UINT count)
         }
     }
 
+#elif SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SPI
+    if (BSP_SD_WriteBlocks((uint32_t*)buff,
+        (uint32_t)(sector),
+        count, SD_TIMEOUT) == MSD_OK)
+    {
+        /* wait until the Write operation is finished */
+        while (BSP_SD_GetCardState() != MSD_OK) {}
+        res = RES_OK;
+    }
+#endif
+
     return res;
 }
 #endif /* _USE_WRITE == 1 */
@@ -303,8 +330,9 @@ DRESULT SD_ioctl(BYTE lun, BYTE cmd, void *buff)
     DRESULT res = RES_ERROR;
     BSP_SD_CardInfo CardInfo;
 
-    if (Stat & STA_NOINIT)
+    if (Stat & STA_NOINIT) {
         return RES_NOTRDY;
+    }
 
     switch (cmd)
     {

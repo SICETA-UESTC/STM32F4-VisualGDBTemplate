@@ -56,9 +56,6 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spi_handle)
 {
     if (spi_handle->Instance == SPI2)
     {
-        /* GPIO clock enable */
-        __HAL_RCC_GPIOB_CLK_ENABLE();
-
         /* Peripheral clock disable */
         __HAL_RCC_SPI2_CLK_DISABLE();
 
@@ -71,16 +68,16 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spi_handle)
     }
 }
 
-void SPI_SetSpeed(SPI_HandleTypeDef* spi_handle, uint16_t prescaler)
+void SPI_SetSpeed(SPI_HandleTypeDef* spi_handle, uint16_t baudrate_prescaler)
 {
-    spi_handle->Instance->CR1 = ((uint16_t)(SPI2->CR1 & 0xFFC7)) | (prescaler & 0x0038);
+    spi_handle->Instance->CR1 = ((uint16_t)(SPI2->CR1 & 0xFFC7)) | (baudrate_prescaler & 0x0038);
     spi_handle->Instance->CR1 |= SPI_CR1_SPE;
 }
 
 uint8_t SPI_ReadWriteByte(SPI_HandleTypeDef* spi_handle, uint8_t data)
 {
-    while (!(spi_handle->Instance->SR & SPI_FLAG_TXE)) { __NOP; }
+    while (!(spi_handle->Instance->SR & SPI_FLAG_TXE)) { __NOP(); }
     spi_handle->Instance->DR = data;
-    while (!(spi_handle->Instance->SR & SPI_FLAG_RXNE)) { __NOP; }
+    while (!(spi_handle->Instance->SR & SPI_FLAG_RXNE)) { __NOP(); }
     return SPI2->DR;
 }

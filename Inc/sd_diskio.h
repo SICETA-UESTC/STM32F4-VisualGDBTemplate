@@ -52,10 +52,17 @@
 
 /* USER CODE BEGIN firstSection */
 /* can be used to modify / undefine following code or add new definitions */
+#define SD_BSP_DRIVER_SPI       0
+#define SD_BSP_DRIVER_SDIO      1
+#define SD_BSP_DRIVER_TYPE      SD_BSP_DRIVER_SDIO
 /* USER CODE END firstSection */
 
 /* Includes ------------------------------------------------------------------*/
-#include "bsp_driver_sd.h"
+#if SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SDIO
+#include "bsp_sdio_sd.h"
+#elif SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SPI
+#include "bsp_spi_sd.h"
+#endif // SD_BSP_DRIVER_TYPE == SD_BSP_DRIVER_SDIO
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */

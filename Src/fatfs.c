@@ -62,7 +62,7 @@ void FATFS_Init(void)
 
     if (f_mount(&SDFatFS, (TCHAR const*)SDPath, 1) != FR_OK)
     {
-        while (1);
+        Error_Handler();
     }
 }
 

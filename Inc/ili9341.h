@@ -30,7 +30,7 @@
   * @param  reg: Register address
   * @retval None
   */
-inline void ILI9341_SelectReg(uint16_t reg)
+static inline void ILI9341_SelectReg(uint16_t reg)
 {
     *((__IO uint16_t*)FSMC_LCD_REG_ADDR) = reg;
 }
@@ -40,7 +40,7 @@ inline void ILI9341_SelectReg(uint16_t reg)
   * @param  data: Data to write
   * @retval None
   */
-inline void ILI9341_WriteData(uint16_t data)
+static inline void ILI9341_WriteData(uint16_t data)
 {
     *((__IO uint16_t*)FSMC_LCD_DATA_ADDR) = data;
 }
@@ -50,7 +50,7 @@ inline void ILI9341_WriteData(uint16_t data)
   * @param  None
   * @retval Data from register
   */
-inline uint16_t ILI9341_ReadData(void)
+static inline uint16_t ILI9341_ReadData(void)
 {
     return *((__IO uint16_t*)FSMC_LCD_DATA_ADDR);
 }
@@ -70,7 +70,7 @@ void ILI9341_Init(uint8_t orientation);
 * @param  None
 * @retval driver ID
 */
-inline uint16_t ILI9341_ReadID(void)
+static inline uint16_t ILI9341_ReadID(void)
 {
     uint16_t id;
     ILI9341_SelectReg(0x00D3);
@@ -89,7 +89,7 @@ inline uint16_t ILI9341_ReadID(void)
   * @param  None
   * @retval None
   */
-inline void ILI9341_DisplayOn(void)
+static inline void ILI9341_DisplayOn(void)
 {
     ILI9341_SelectReg(0x29);
 }
@@ -99,7 +99,7 @@ inline void ILI9341_DisplayOn(void)
   * @param  None
   * @retval None
   */
-inline void ILI9341_DisplayOff(void)
+static inline void ILI9341_DisplayOff(void)
 {
     ILI9341_SelectReg(0x28);
 }
@@ -110,7 +110,7 @@ inline void ILI9341_DisplayOff(void)
   * @param  y: Specifies the Y top-left position
   * @retval None
   */
-inline void ILI9341_SetCursor(uint16_t x, uint16_t y)
+static inline void ILI9341_SetCursor(uint16_t x, uint16_t y)
 {
     /* Column address set */
     ILI9341_SelectReg(0x2A);
@@ -130,7 +130,7 @@ inline void ILI9341_SetCursor(uint16_t x, uint16_t y)
   * @param  height: Display window height
   * @retval None
   */
-inline void ILI9341_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
+static inline void ILI9341_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
 {
     /* Column address range set */
     ILI9341_SelectReg(0x2A);
@@ -151,7 +151,7 @@ inline void ILI9341_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t h
   * @param  None
   * @retval None
   */
-inline void ILI9341_PrepareWrite(void)
+static inline void ILI9341_PrepareWrite(void)
 {
     ILI9341_SelectReg(CMD_WRITE_GRAM);
 }
@@ -163,7 +163,7 @@ inline void ILI9341_PrepareWrite(void)
   * @param  color: Pixel color (RGB565 format)
   * @retval None
   */
-inline void ILI9341_WritePixel(uint16_t x, uint16_t y, uint16_t color)
+static inline void ILI9341_WritePixel(uint16_t x, uint16_t y, uint16_t color)
 {
     /* Set cursor pos */
     ILI9341_SetCursor(x, y);
@@ -178,7 +178,7 @@ inline void ILI9341_WritePixel(uint16_t x, uint16_t y, uint16_t color)
   * @param  y: Specifies the Y top-left position
   * @retval Pixel color (RGB565 format)
   */
-inline uint16_t ILI9341_ReadPixel(uint16_t x, uint16_t y)
+static inline uint16_t ILI9341_ReadPixel(uint16_t x, uint16_t y)
 {
     /* Set cursor pos */
     ILI9341_SetCursor(x, y);

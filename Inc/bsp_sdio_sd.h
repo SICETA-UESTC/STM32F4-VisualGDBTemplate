@@ -47,17 +47,11 @@
   ******************************************************************************
   */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F4_SD_H
-#define __STM32F4_SD_H
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
+/* Prevent recursive inclusion -----------------------------------------------*/
+#pragma once
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
+#include <stm32f4xx_hal.h>
 
 /* Exported types --------------------------------------------------------*/
 /** 
@@ -80,7 +74,7 @@ extern "C"
 
 #define SD_PRESENT ((uint8_t)0x01)
 #define SD_NOT_PRESENT ((uint8_t)0x00)
-#define SD_DATATIMEOUT ((uint32_t)100000000)
+#define SD_DATATIMEOUT ((uint32_t)1000)
 
 #ifdef OLD_API
 /* kept to avoid issue when migrating old projects. */
@@ -113,11 +107,5 @@ void BSP_SD_WriteCpltCallback(void);
 void BSP_SD_ReadCpltCallback(void);
 /* USER CODE END BSP_H_CODE */
 #endif
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* __STM32F4_SD_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

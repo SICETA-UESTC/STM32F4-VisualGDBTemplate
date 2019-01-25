@@ -11,7 +11,6 @@
 #include "tim.h"
 #include "usart.h"
 #include "fsmc.h"
-#include "sdio.h"
 #include "fatfs.h"
 #include "usb_device.h"
 #include "usbd_cdc_if.h"
@@ -52,13 +51,12 @@ int main(void)
     TIM7_Init();
 
     /* Initialize USB Vitural COM Port */
-    USB_DEVICE_Init();
+    //USB_DEVICE_Init();
 
     /* Initialize system peripherals */
     DMA_Init();
     FSMC_Init();
     USART1_UART_Init();
-    SDIO_SD_Init();
 
     /* Initialize Fat FileSystem for SD Card */
     FATFS_Init();

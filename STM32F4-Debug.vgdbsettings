@@ -122,7 +122,7 @@
   <UserDefinedVariables />
   <ImportedPropertySheets />
   <CodeSense>
-    <Enabled>Unknown</Enabled>
+    <Enabled>False</Enabled>
     <CFLAGS />
     <CXXFLAGS />
     <ExternalSourceFileList />

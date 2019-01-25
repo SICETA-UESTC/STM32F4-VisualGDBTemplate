@@ -64,6 +64,7 @@ extern FATFS SDFatFS;  /* File system object for SD logical drive */
 extern FIL SDFile;     /* File object for SD */
 
 void FATFS_Init(void);
+extern void Error_Handler(void);
 
 #ifdef __cplusplus
 }

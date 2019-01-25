@@ -48,7 +48,7 @@
 #define SALMON          0xFC0E  //ÈıÎÄÓãºì
 #define OLIVE           0x9E66  //éÏé­ÂÌ
 
-inline uint16_t pack_rgb565(uint8_t r, uint8_t g, uint8_t b)
+static inline uint16_t pack_rgb565(uint8_t r, uint8_t g, uint8_t b)
 {
     uint16_t color = 0x00;
     color |= (r & 0xF8) << 8;
@@ -57,7 +57,7 @@ inline uint16_t pack_rgb565(uint8_t r, uint8_t g, uint8_t b)
     return color;
 }
 
-inline uint16_t rgb888_2_rgb565(uint32_t rgb_888)
+static inline uint16_t rgb888_2_rgb565(uint32_t rgb_888)
 {
     return pack_rgb565((rgb_888 >> 16) & 0xFF,
                        (rgb_888 >> 8) & 0xFF,

@@ -30,7 +30,7 @@
   * @param  reg: Register address
   * @retval None
   */
-inline void NT35510_SelectReg(uint16_t reg)
+static inline void NT35510_SelectReg(uint16_t reg)
 {
     *((__IO uint16_t*)FSMC_LCD_REG_ADDR) = reg;
 }
@@ -40,7 +40,7 @@ inline void NT35510_SelectReg(uint16_t reg)
   * @param  data: Data to write
   * @retval None
   */
-inline void NT35510_WriteData(uint16_t data)
+static inline void NT35510_WriteData(uint16_t data)
 {
     *((__IO uint16_t*)FSMC_LCD_DATA_ADDR) = data;
 }
@@ -51,7 +51,7 @@ inline void NT35510_WriteData(uint16_t data)
   * @param  data: Data to write
   * @retval None
   */
-inline void NT35510_WriteReg(uint16_t reg, uint16_t data)
+static inline void NT35510_WriteReg(uint16_t reg, uint16_t data)
 {
     NT35510_SelectReg(reg);
     NT35510_WriteData(data);
@@ -62,7 +62,7 @@ inline void NT35510_WriteReg(uint16_t reg, uint16_t data)
   * @param  None
   * @retval Data from register
   */
-inline uint16_t NT35510_ReadData(void)
+static inline uint16_t NT35510_ReadData(void)
 {
     return *((__IO uint16_t*)FSMC_LCD_DATA_ADDR);
 }
@@ -81,7 +81,7 @@ void NT35510_Init(uint8_t orientation);
 * @param  None
 * @retval driver ID
 */
-inline uint16_t NT35510_ReadID(void)
+static inline uint16_t NT35510_ReadID(void)
 {
     uint16_t id;
     /* Get driver ID */
@@ -97,7 +97,7 @@ inline uint16_t NT35510_ReadID(void)
   * @param  None
   * @retval None
   */
-inline void NT35510_DisplayOn(void)
+static inline void NT35510_DisplayOn(void)
 {
     NT35510_SelectReg(0x2900);
 }
@@ -107,7 +107,7 @@ inline void NT35510_DisplayOn(void)
   * @param  None
   * @retval None
   */
-inline void NT35510_DisplayOff(void)
+static inline void NT35510_DisplayOff(void)
 {
     NT35510_SelectReg(0x2800);
 }
@@ -118,7 +118,7 @@ inline void NT35510_DisplayOff(void)
   * @param  y: Specifies the Y top-left position
   * @retval None
   */
-inline void NT35510_SetCursor(uint16_t x, uint16_t y)
+static inline void NT35510_SetCursor(uint16_t x, uint16_t y)
 {
     /* Column address set */
     NT35510_WriteReg(0x2A00, x >> 8);
@@ -136,7 +136,7 @@ inline void NT35510_SetCursor(uint16_t x, uint16_t y)
   * @param  height: Display window height
   * @retval None
   */
-inline void NT35510_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
+static inline void NT35510_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
 {
     /* Column address range set */
     NT35510_WriteReg(0x2A00, x >> 8);
@@ -155,7 +155,7 @@ inline void NT35510_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t h
   * @param  None
   * @retval None
   */
-inline void NT35510_PrepareWrite(void)
+static inline void NT35510_PrepareWrite(void)
 {
     NT35510_SelectReg(CMD_WRITE_GRAM);
 }
@@ -167,7 +167,7 @@ inline void NT35510_PrepareWrite(void)
   * @param  color: Pixel color (RGB565 format)
   * @retval None
   */
-inline void NT35510_WritePixel(uint16_t x, uint16_t y, uint16_t color)
+static inline void NT35510_WritePixel(uint16_t x, uint16_t y, uint16_t color)
 {
     /* Set cursor pos */
     NT35510_SetCursor(x, y);
@@ -182,7 +182,7 @@ inline void NT35510_WritePixel(uint16_t x, uint16_t y, uint16_t color)
   * @param  y: Specifies the Y top-left position
   * @retval Pixel color (RGB565 format)
   */
-inline uint16_t NT35510_ReadPixel(uint16_t x, uint16_t y)
+static inline uint16_t NT35510_ReadPixel(uint16_t x, uint16_t y)
 {
     /* Set cursor pos */
     NT35510_SetCursor(x, y);

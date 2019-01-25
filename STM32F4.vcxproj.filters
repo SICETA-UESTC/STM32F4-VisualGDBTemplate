@@ -818,13 +818,13 @@
     <ClInclude Include="Middlewares\Third_Party\FatFs\Inc\integer.h">
       <Filter>Header files\Drivers\FatFs</Filter>
     </ClInclude>
-    <ClInclude Include="Inc\bsp_driver_sd.h">
-      <Filter>Header files\BSP</Filter>
-    </ClInclude>
     <ClInclude Include="Inc\led.h">
       <Filter>Header files\BSP</Filter>
     </ClInclude>
     <ClInclude Include="Inc\lcd.h">
+      <Filter>Header files\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\bsp_sdio_sd.h">
       <Filter>Header files\BSP</Filter>
     </ClInclude>
   </ItemGroup>
@@ -946,9 +946,6 @@
     <ClCompile Include="Middlewares\Third_Party\FatFs\Src\ff_gen_drv.c">
       <Filter>Source files\Drivers\FatFs</Filter>
     </ClCompile>
-    <ClCompile Include="Src\bsp_driver_sd.c">
-      <Filter>Source files\BSP</Filter>
-    </ClCompile>
     <ClCompile Include="Src\sdio.c">
       <Filter>Source files\System</Filter>
     </ClCompile>
@@ -959,6 +956,9 @@
       <Filter>Source files\BSP</Filter>
     </ClCompile>
     <ClCompile Include="Src\lcd.c">
+      <Filter>Source files\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\bsp_sdio_sd.c">
       <Filter>Source files\BSP</Filter>
     </ClCompile>
   </ItemGroup>

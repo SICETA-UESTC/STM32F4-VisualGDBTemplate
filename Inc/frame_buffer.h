@@ -42,12 +42,12 @@ void FrameBuffer_Clear(FrameBufferTypeDef *fb, uint16_t color);
 void FrameBuffer_Update(FrameBufferTypeDef *fb);
 
 /* Public Inline Functions ---------------------------------------------------*/
-inline void FrameBuffer_WritePixel(FrameBufferTypeDef *fb, uint16_t x, uint16_t y, uint16_t color)
+static inline void FrameBuffer_WritePixel(FrameBufferTypeDef *fb, uint16_t x, uint16_t y, uint16_t color)
 {
     fb->PixelData[fb->Width * y + x] = color;
 }
 
-inline uint16_t FrameBuffer_ReadPixel(const FrameBufferTypeDef *fb, uint16_t x, uint16_t y)
+static inline uint16_t FrameBuffer_ReadPixel(const FrameBufferTypeDef *fb, uint16_t x, uint16_t y)
 {
     return fb->PixelData[fb->Width * y + x];
 }

@@ -46,7 +46,7 @@
       <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CPPLanguageStandard />
-      <Optimization>Og</Optimization>
+      <Optimization>O0</Optimization>
       <InlineFunctions>true</InlineFunctions>
     </ClCompile>
     <Link>
@@ -76,8 +76,6 @@
       <CPPLanguageStandard />
       <Optimization>O2</Optimization>
       <InlineFunctions>true</InlineFunctions>
-      <LinkTimeOptimization>
-      </LinkTimeOptimization>
     </ClCompile>
     <Link>
       <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
@@ -200,7 +198,7 @@
     <ClCompile Include="Src\ad9959.c" />
     <ClCompile Include="Src\adc.c" />
     <ClCompile Include="Src\ads8694.c" />
-    <ClCompile Include="Src\bsp_driver_sd.c" />
+    <ClCompile Include="Src\bsp_sdio_sd.c" />
     <ClCompile Include="Src\curve_chart.c" />
     <ClCompile Include="Src\dac.c" />
     <ClCompile Include="Src\dcmi.c" />
@@ -349,7 +347,7 @@
     <ClInclude Include="Inc\ads8694.h" />
     <ClInclude Include="Inc\ascii.h" />
     <ClInclude Include="Inc\big_number.h" />
-    <ClInclude Include="Inc\bsp_driver_sd.h" />
+    <ClInclude Include="Inc\bsp_sdio_sd.h" />
     <ClInclude Include="Inc\colors.h" />
     <ClInclude Include="Inc\curve_chart.h" />
     <ClInclude Include="Inc\dac.h" />
