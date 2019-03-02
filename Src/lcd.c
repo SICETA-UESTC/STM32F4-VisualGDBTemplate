@@ -40,42 +40,7 @@
 #include "fatfs.h"
 #endif // LCD_USE_FATFS
 
-
 /* Private Marcos ------------------------------------------------------------*/
-#if LCD_DRIVER_IC == NT35510
-
-#define DRIVER_INIT                 NT35510_Init
-#define DRIVER_READID               NT35510_ReadID
-#define DRIVER_ON                   NT35510_DisplayOn
-#define DRIVER_OFF                  NT35510_DisplayOff
-#define SET_CURSOR                  NT35510_SetCursor
-#define SET_WINDOW                  NT35510_SetWindow
-#define PREPARE_WRITE               NT35510_PrepareWrite
-#define WRITE_GRAM                  NT35510_WriteData
-
-#elif LCD_DRIVER_IC == ILI9341
-
-#define DRIVER_INIT                 ILI9341_Init
-#define DRIVER_READID               ILI9341_ReadID
-#define DRIVER_ON                   ILI9341_DisplayOn
-#define DRIVER_OFF                  ILI9341_DisplayOff
-#define SET_CURSOR                  ILI9341_SetCursor
-#define SET_WINDOW                  ILI9341_SetWindow
-#define PREPARE_WRITE               ILI9341_PrepareWrite
-#define WRITE_GRAM                  ILI9341_WriteData
-
-#elif LCD_DRIVER_IC == ILI9325
-
-#define DRIVER_INIT                 ILI9325_Init
-#define DRIVER_READID               ILI9325_ReadID
-#define DRIVER_ON                   ILI9325_DisplayOn
-#define DRIVER_OFF                  ILI9325_DisplayOff
-#define SET_CURSOR                  ILI9325_SetCursor
-#define SET_WINDOW                  ILI9325_SetWindow
-#define PREPARE_WRITE               ILI9325_PrepareWrite
-#define WRITE_GRAM                  ILI9325_WriteData
-
-#endif
 
 #if LCD_USE_FRAMEBUFFER
 
@@ -85,25 +50,6 @@
 #define FRAMEBUFFER_BASE_ADDR       FSMC_SRAM_BASE_ADDR
 #define WRITE_PIXEL(X, Y, COL)      FrameBuffer_WritePixel(&s_framebuffer, X, Y, COL)
 #define READ_PIXEL(X, Y)            FrameBuffer_ReadPixel(&s_framebuffer, X, Y)
-
-#else
-
-#if LCD_DRIVER_IC == NT35510
-
-#define WRITE_PIXEL                 NT35510_WritePixel
-#define READ_PIXEL                  NT35510_ReadPixel
-
-#elif LCD_DRIVER_IC == ILI9341
-
-#define WRITE_PIXEL                 ILI9341_WritePixel
-#define READ_PIXEL                  ILI9341_ReadPixel
-
-#elif LCD_DRIVER_IC == ILI9325
-
-#define WRITE_PIXEL                 ILI9325_WritePixel
-#define READ_PIXEL                  ILI9325_ReadPixel
-
-#endif
 
 #endif // LCD_USE_FRAMEBUFFER
 
@@ -819,13 +765,14 @@ void LCD_DrawCharASCII(uint8_t ch, uint8_t font_size, uint16_t x, uint16_t y, ui
 {
     uint8_t buffer_size = font_size * font_size >> 4;
     uint16_t y0 = y;
-    uint8_t* font_buffer = (uint8_t *)s_file_buffer;
+    uint8_t* font_buffer;
 
     ch -= ' ';
 
 #if LCD_USE_FONTLIB
 
     size_t read_count;
+    font_buffer = (uint8_t *)s_file_buffer;
 
     /* Calculate offset in font lib file */
     f_lseek(&s_ascii_font_file, ch * buffer_size);

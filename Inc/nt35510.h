@@ -17,11 +17,22 @@
 #include "fsmc.h"
 
 /* Public Marcos -------------------------------------------------------------*/
-#define CMD_WRITE_GRAM  0x2C00
-#define CMD_READ_GRAM   0x2E00
+#define CMD_WRITE_GRAM              0x2C00
+#define CMD_READ_GRAM               0x2E00
 
-#define PIXEL_WIDTH     800
-#define PIXEL_HEIGHT    480
+#define PIXEL_WIDTH                 800
+#define PIXEL_HEIGHT                480
+
+#define DRIVER_INIT                 NT35510_Init
+#define DRIVER_READID               NT35510_ReadID
+#define DRIVER_ON                   NT35510_DisplayOn
+#define DRIVER_OFF                  NT35510_DisplayOff
+#define SET_CURSOR                  NT35510_SetCursor
+#define SET_WINDOW                  NT35510_SetWindow
+#define PREPARE_WRITE               NT35510_PrepareWrite
+#define WRITE_GRAM                  NT35510_WriteData
+#define WRITE_PIXEL                 NT35510_WritePixel
+#define READ_PIXEL                  NT35510_ReadPixel
 
 /* Low-Level I/O Functions ---------------------------------------------------*/
 

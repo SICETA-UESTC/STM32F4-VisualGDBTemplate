@@ -47,7 +47,6 @@
       <AdditionalOptions />
       <CPPLanguageStandard />
       <Optimization>O0</Optimization>
-      <InlineFunctions>true</InlineFunctions>
     </ClCompile>
     <Link>
       <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>

@@ -259,7 +259,7 @@ void MeasureHarmonics(void)
                                     + fft_output[base_peak_index + 2]);
     /* Frequency compensation using 4 neighbouring points around max value */
     base_freq += (fft_output[base_peak_index + 2] - fft_output[base_peak_index - 2]) * 39.43882f * amp_factor
-        + (fft_output[base_peak_index + 1] - fft_output[base_peak_index - 1]) * 23.11291f * amp_factor;
+               + (fft_output[base_peak_index + 1] - fft_output[base_peak_index - 1]) * 23.11291f * amp_factor;
 
     /* Update display value */
     if (base_freq < 100.0f) {

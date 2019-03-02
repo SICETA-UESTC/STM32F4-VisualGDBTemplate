@@ -16,12 +16,23 @@
 #include <stm32f4xx_hal.h>
 #include "fsmc.h"
 
-/* Private Marcos ------------------------------------------------------------*/
-#define CMD_WRITE_GRAM  0x002C
-#define CMD_READ_GRAM   0x002E
+/* Public Marcos ------------------------------------------------------------*/
+#define CMD_WRITE_GRAM              0x002C
+#define CMD_READ_GRAM               0x002E
 
-#define PIXEL_WIDTH     320
-#define PIXEL_HEIGHT    240
+#define PIXEL_WIDTH                 320
+#define PIXEL_HEIGHT                240
+
+#define DRIVER_INIT                 ILI9341_Init
+#define DRIVER_READID               ILI9341_ReadID
+#define DRIVER_ON                   ILI9341_DisplayOn
+#define DRIVER_OFF                  ILI9341_DisplayOff
+#define SET_CURSOR                  ILI9341_SetCursor
+#define SET_WINDOW                  ILI9341_SetWindow
+#define PREPARE_WRITE               ILI9341_PrepareWrite
+#define WRITE_GRAM                  ILI9341_WriteData
+#define WRITE_PIXEL                 ILI9341_WritePixel
+#define READ_PIXEL                  ILI9341_ReadPixel
 
 /* Low-Level I/O Functions ---------------------------------------------------*/
 

@@ -38,23 +38,6 @@
  */
 #define FRAMEBUFFER_BASE_ADDR       FSMC_SRAM_BASE_ADDR
 
-#else
-#if LCD_DRIVER_IC == NT35510
-
-#define WRITE_PIXEL                 NT35510_WritePixel
-#define READ_PIXEL                  NT35510_ReadPixel
-
-#elif LCD_DRIVER_IC == ILI9341
-
-#define WRITE_PIXEL                 ILI9341_WritePixel
-#define READ_PIXEL                  ILI9341_ReadPixel
-
-#elif LCD_DRIVER_IC == ILI9325
-
-#define WRITE_PIXEL                 ILI9325_WritePixel
-#define READ_PIXEL                  ILI9325_ReadPixel
-
-#endif
 #endif
 
 /* Private variables ---------------------------------------------------------*/

@@ -13,6 +13,9 @@
 #include "ili9325.h"
 #include "lcd.h"
 
+/* Private variables ---------------------------------------------------------*/
+static _Bool s_is_horizontal;
+
 /* Public Function Definitions -----------------------------------------------*/
 
 /**
@@ -22,11 +25,11 @@
   */
 void ILI9325_Init(uint8_t orientation)
 {
+    s_is_horizontal = (orientation == LCD_ORIENTATION_90_DEGREE) || (orientation == LCD_ORIENTATION_270_DEGREE);
+
     /* Start Initial Sequence --------------------------------------------------*/
     ILI9325_WriteReg(0x00, 0x0001); /* Start internal OSC. */
-    ILI9325_WriteReg(0x01, 0x0100); /* Set SS and SM bit */
     ILI9325_WriteReg(0x02, 0x0700); /* Set 1 line inversion */
-    ILI9325_WriteReg(0x03, 0x1018); /* Set GRAM write direction and BGR=1. */
     ILI9325_WriteReg(0x04, 0x0000); /* Resize register */
     ILI9325_WriteReg(0x08, 0x0202); /* Set the back porch and front porch */
     ILI9325_WriteReg(0x09, 0x0000); /* Set non-display area refresh cycle ISC[3:0] */
@@ -49,9 +52,6 @@ void ILI9325_Init(uint8_t orientation)
     ILI9325_WriteReg(0x13, 0x1d00); /* VDV[4:0] for VCOM amplitude */
     ILI9325_WriteReg(0x29, 0x0013); /* VCM[4:0] for VCOMH */
 
-    ILI9325_WriteReg(0x20, 0x0000); /* GRAM horizontal Address */
-    ILI9325_WriteReg(0x21, 0x0000); /* GRAM Vertical Address */
-
     /* Adjust the Gamma Curve (ILI9325) ----------------------------------------*/
     ILI9325_WriteReg(0x30, 0x0007);
     ILI9325_WriteReg(0x31, 0x0302);
@@ -70,7 +70,6 @@ void ILI9325_Init(uint8_t orientation)
     ILI9325_WriteReg(0x52, 0x0000); /* Vertical GRAM Start Address */
     ILI9325_WriteReg(0x53, 0x013F); /* Vertical GRAM End Address */
 
-    ILI9325_WriteReg(0x60, 0xA700); /* Gate Scan Line(GS=1, scan direction is G320~G1) */
     ILI9325_WriteReg(0x61, 0x0001); /* NDL,VLE, REV */
     ILI9325_WriteReg(0x6A, 0x0000); /* set scrolling line */
 
@@ -90,25 +89,32 @@ void ILI9325_Init(uint8_t orientation)
     ILI9325_WriteReg(0x97, 0x0000);
     ILI9325_WriteReg(0x98, 0x0000);
 
-    /* set GRAM write direction and BGR = 1 */
-    /* I/D=00 (Horizontal : increment, Vertical : decrement) */
-    /* AM=1 (address is updated in vertical writing direction) */
     switch (orientation)
     {
         case LCD_ORIENTATION_0_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1018);
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
+            ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;
         case LCD_ORIENTATION_90_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1000);
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=0, GRAM write direction horizontal */
+            ILI9325_WriteReg(0x01, 0x0000); /* SS=1, scan direction is S720~S1 */
+            ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;
         case LCD_ORIENTATION_180_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1008);
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x01, 0x0000); /* SS=0, scan direction is S1~S720 */
+            ILI9325_WriteReg(0x60, 0x2700); /* GS=0, scan direction is G1~G320 */
             break;
         case LCD_ORIENTATION_270_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1010);
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=0, GRAM write direction horizontal */
+            ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
+            ILI9325_WriteReg(0x60, 0x2700); /* GS=1, scan direction is G320~G1 */
             break;
         default:
-            ILI9325_WriteReg(0x03, 0x1018);
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
+            ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;
     }
 
@@ -117,4 +123,63 @@ void ILI9325_Init(uint8_t orientation)
 
     /* Prepare to write GRAM */
     ILI9325_SelectReg(0x22);
+}
+
+/**
+  * @brief  Sets cursor position
+  * @param  x: Specifies the X top-left position
+  * @param  y: Specifies the Y top-left position
+  * @retval None
+  */
+void ILI9325_SetCursor(uint16_t x, uint16_t y)
+{
+    if (s_is_horizontal)
+    {
+        uint16_t temp = x;
+        x = y;
+        y = temp;
+    }
+
+    /* GRAM horizontal address */
+    ILI9325_WriteReg(0x20, x);
+    /* GRAM vertical address */
+    ILI9325_WriteReg(0x21, y);
+}
+
+/**
+  * @brief  Sets a display window
+  * @param  x: Specifies the X top-left position
+  * @param  y: Specifies the Y top-left position
+  * @param  width:  Display window width
+  * @param  height: Display window height
+  * @retval None
+  */
+void ILI9325_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
+{
+    if (s_is_horizontal)
+    {
+        /* Horizontal GRAM start address */
+        ILI9325_WriteReg(0x50, y);
+        /* Horizontal GRAM end address */
+        ILI9325_WriteReg(0x51, y + height - 1);
+
+        /* Vertical GRAM start address */
+        ILI9325_WriteReg(0x52, x);
+        /* Vertical GRAM end address */
+        ILI9325_WriteReg(0x53, x + width - 1);
+    }
+    else
+    {
+        /* Horizontal GRAM start address */
+        ILI9325_WriteReg(0x50, x);
+        /* Horizontal GRAM end address */
+        ILI9325_WriteReg(0x51, x + width - 1);
+
+        /* Vertical GRAM start address */
+        ILI9325_WriteReg(0x52, y);
+        /* Vertical GRAM end address */
+        ILI9325_WriteReg(0x53, y + height - 1);
+    }
+
+    ILI9325_SetCursor(x, y);
 }

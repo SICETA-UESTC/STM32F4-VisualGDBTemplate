@@ -25,25 +25,6 @@
 #endif
 
 /* Private Marcos ------------------------------------------------------------*/
-#if LCD_DRIVER_IC == NT35510
-
-#define SET_WINDOW                  NT35510_SetWindow
-#define PREPARE_WRITE               NT35510_PrepareWrite
-#define WRITE_GRAM                  NT35510_WriteData
-
-#elif LCD_DRIVER_IC == ILI9341
-
-#define SET_WINDOW                  ILI9341_SetWindow
-#define PREPARE_WRITE               ILI9341_PrepareWrite
-#define WRITE_GRAM                  ILI9341_WriteData
-
-#elif LCD_DRIVER_IC == ILI9325
-
-#define SET_WINDOW                  ILI9325_SetWindow
-#define PREPARE_WRITE               ILI9325_PrepareWrite
-#define WRITE_GRAM                  ILI9325_WriteData
-
-#endif
 
 /* External Variables --------------------------------------------------------*/
 #if FRAME_BUFFER_USE_DMA

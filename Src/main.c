@@ -59,20 +59,24 @@ int main(void)
     USART1_UART_Init();
 
     /* Initialize Fat FileSystem for SD Card */
-    FATFS_Init();
+    //FATFS_Init();
 
     /* Initialize all external hardware */
-    LED_Init();
-    LCD_Init(LCD_ORIENTATION_270_DEGREE);
-    LCD_SetFont(FONT_TYPE_SANS);
+    //LED_Init();
+    LCD_Init(LCD_ORIENTATION_0_DEGREE);
+    LCD_DrawString("Lovely", 16, 16, 30, LAWNGREEN);
+    LCD_FillRect(128, 8, 32, 16, DODGERBLUE);
+    //LCD_SetFont(FONT_TYPE_SANS);
 
-    LCD_DrawBmpFromFile("0:/bmp/我就和你们一起玩.bmp", 0, 0);
+    //LCD_DrawBmpFromFile("0:/bmp/我就和你们一起玩.bmp", 0, 0);
 
     /* Infinite loop */
     for (;;)
     {
         /* LED Blink */
         LED_Toggle(LED_0);
+
+        HAL_Delay(1000);
 
         int val;
         if (scanf("%d", &val) != EOF) {

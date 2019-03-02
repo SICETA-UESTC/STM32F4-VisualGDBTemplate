@@ -13,9 +13,8 @@ void FSMC_Init(void)
 
     /* Perform the SRAM1 memory initialization sequence */
     hsram1.Instance = FSMC_NORSRAM_DEVICE;
-    hsram1.Extended = FSMC_NORSRAM_EXTENDED_DEVICE;
     /* hsram1.Init */
-    hsram1.Init.NSBank = FSMC_NORSRAM_BANK3;
+    hsram1.Init.NSBank = FSMC_SRAM_BANK;
     hsram1.Init.DataAddressMux = FSMC_DATA_ADDRESS_MUX_DISABLE;
     hsram1.Init.MemoryType = FSMC_MEMORY_TYPE_SRAM;
     hsram1.Init.MemoryDataWidth = FSMC_NORSRAM_MEM_BUS_WIDTH_16;
@@ -47,7 +46,7 @@ void FSMC_Init(void)
     hsram_lcd.Instance = FSMC_NORSRAM_DEVICE;
     hsram_lcd.Extended = FSMC_NORSRAM_EXTENDED_DEVICE;
     /* hsram_lcd.Init */
-    hsram_lcd.Init.NSBank = FSMC_NORSRAM_BANK4;
+    hsram_lcd.Init.NSBank = FSMC_LCD_BANK;
     hsram_lcd.Init.DataAddressMux = FSMC_DATA_ADDRESS_MUX_DISABLE;
     hsram_lcd.Init.MemoryType = FSMC_MEMORY_TYPE_SRAM;
     hsram_lcd.Init.MemoryDataWidth = FSMC_NORSRAM_MEM_BUS_WIDTH_16;
@@ -63,18 +62,18 @@ void FSMC_Init(void)
     hsram_lcd.Init.PageSize = FSMC_PAGE_SIZE_NONE;
 
     /* ReadWrite Timing */
-    RW_Timing.AddressSetupTime = 0x01;		//HCLK = 168MHz об 6ns * 2 = 12ns
+    RW_Timing.AddressSetupTime = 0x01;
     RW_Timing.AddressHoldTime = 0x00;
-    RW_Timing.DataSetupTime = 0x12;			//HCLK = 168MHz об 6ns * 23 = 162ns
+    RW_Timing.DataSetupTime = 0x12;
     RW_Timing.BusTurnAroundDuration = 0x00;
     RW_Timing.CLKDivision = 0x00;
     RW_Timing.DataLatency = 0x00;
     RW_Timing.AccessMode = FSMC_ACCESS_MODE_A;
 
     /* Extended Write Timing */
-    W_Timing.AddressSetupTime = 0x00;
+    W_Timing.AddressSetupTime = 0x02;
     W_Timing.AddressHoldTime = 0x00;
-    W_Timing.DataSetupTime = 0x02;			//HCLK = 168MHz об 6ns * 3 = 18ns
+    W_Timing.DataSetupTime = 0x05;
     W_Timing.BusTurnAroundDuration = 0x00;
     W_Timing.CLKDivision = 0x00;
     W_Timing.DataLatency = 0x00;

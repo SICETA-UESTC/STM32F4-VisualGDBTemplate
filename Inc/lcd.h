@@ -32,10 +32,10 @@
 #define LCD_BL_GPIO_PIN             GPIO_PIN_6
 
 /* LCD Configurations */
-#define LCD_DRIVER_IC               ILI9341
+#define LCD_DRIVER_IC               ILI9325
 #define LCD_USE_FRAMEBUFFER         0
-#define LCD_USE_FATFS               1
-#define LCD_USE_FONTLIB             1
+#define LCD_USE_FATFS               0
+#define LCD_USE_FONTLIB             0
 
 #if !LCD_USE_FATFS
 #define LCD_USE_FONTLIB             0

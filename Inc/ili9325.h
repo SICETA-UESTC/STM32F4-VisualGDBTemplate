@@ -16,12 +16,23 @@
 #include <stm32f4xx_hal.h>
 #include "fsmc.h"
 
-/* Private Marcos ------------------------------------------------------------*/
-#define CMD_WRITE_GRAM  0x0022
-#define CMD_READ_GRAM   0x0022
+/* Public Marcos ------------------------------------------------------------*/
+#define CMD_WRITE_GRAM              0x0022
+#define CMD_READ_GRAM               0x0022
 
-#define PIXEL_WIDTH     320
-#define PIXEL_HEIGHT    240
+#define PIXEL_WIDTH                 320
+#define PIXEL_HEIGHT                240
+
+#define DRIVER_INIT                 ILI9325_Init
+#define DRIVER_READID               ILI9325_ReadID
+#define DRIVER_ON                   ILI9325_DisplayOn
+#define DRIVER_OFF                  ILI9325_DisplayOff
+#define SET_CURSOR                  ILI9325_SetCursor
+#define SET_WINDOW                  ILI9325_SetWindow
+#define PREPARE_WRITE               ILI9325_PrepareWrite
+#define WRITE_GRAM                  ILI9325_WriteData
+#define WRITE_PIXEL                 ILI9325_WritePixel
+#define READ_PIXEL                  ILI9325_ReadPixel
 
 /* Low-Level I/O Functions ---------------------------------------------------*/
 
@@ -30,7 +41,7 @@
   * @param  reg: Register address
   * @retval None
   */
-inline void ILI9325_SelectReg(uint16_t reg)
+static inline void ILI9325_SelectReg(uint16_t reg)
 {
     *((__IO uint16_t*)FSMC_LCD_REG_ADDR) = reg;
 }
@@ -40,7 +51,7 @@ inline void ILI9325_SelectReg(uint16_t reg)
   * @param  data: Data to write
   * @retval None
   */
-inline void ILI9325_WriteData(uint16_t data)
+static inline void ILI9325_WriteData(uint16_t data)
 {
     *((__IO uint16_t*)FSMC_LCD_DATA_ADDR) = data;
 }
@@ -51,7 +62,7 @@ inline void ILI9325_WriteData(uint16_t data)
   * @param  data: Data to write
   * @retval None
   */
-inline void ILI9325_WriteReg(uint16_t reg, uint16_t data)
+static inline void ILI9325_WriteReg(uint16_t reg, uint16_t data)
 {
     ILI9325_SelectReg(reg);
     ILI9325_WriteData(data);
@@ -62,7 +73,7 @@ inline void ILI9325_WriteReg(uint16_t reg, uint16_t data)
   * @param  None
   * @retval Data from register
   */
-inline uint16_t ILI9325_ReadData(void)
+static inline uint16_t ILI9325_ReadData(void)
 {
     return *((__IO uint16_t*)FSMC_LCD_DATA_ADDR);
 }
@@ -81,10 +92,10 @@ void ILI9325_Init(uint8_t orientation);
 * @param  None
 * @retval driver ID
 */
-inline uint16_t ILI9325_ReadID(void)
+static inline uint16_t ILI9325_ReadID(void)
 {
     uint16_t id;
-    ILI9325_SelectReg(0x00D3);
+    ILI9325_SelectReg(0x0000);
     /* Dummy read */
     ILI9325_ReadData();
     ILI9325_ReadData();
@@ -100,7 +111,7 @@ inline uint16_t ILI9325_ReadID(void)
   * @param  None
   * @retval None
   */
-inline void ILI9325_DisplayOn(void)
+static inline void ILI9325_DisplayOn(void)
 {
     /* Power On sequence -------------------------------------------------------*/
     ILI9325_WriteReg(0x10, 0x0000); /* SAP, BT[3:0], AP, DSTB, SLP, STB */
@@ -125,7 +136,7 @@ inline void ILI9325_DisplayOn(void)
   * @param  None
   * @retval None
   */
-inline void ILI9325_DisplayOff(void)
+static inline void ILI9325_DisplayOff(void)
 {
     /* Power Off sequence ------------------------------------------------------*/
     ILI9325_WriteReg(0x10, 0x0000); /* SAP, BT[3:0], AP, DSTB, SLP, STB */
@@ -145,11 +156,7 @@ inline void ILI9325_DisplayOff(void)
   * @param  y: Specifies the Y top-left position
   * @retval None
   */
-inline void ILI9325_SetCursor(uint16_t x, uint16_t y)
-{
-    ILI9325_WriteReg(0x20, y);
-    ILI9325_WriteReg(0x21, PIXEL_WIDTH - x - 1);
-}
+void ILI9325_SetCursor(uint16_t x, uint16_t y);
 
 /**
   * @brief  Sets a display window
@@ -159,25 +166,14 @@ inline void ILI9325_SetCursor(uint16_t x, uint16_t y)
   * @param  height: Display window height
   * @retval None
   */
-inline void ILI9325_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height)
-{
-    /* Horizontal GRAM start address */
-    ILI9325_WriteReg(0x50, y);
-    /* Horizontal GRAM end address */
-    ILI9325_WriteReg(0x51, y + height - 1);
-
-    /* Vertical GRAM start address */
-    ILI9325_WriteReg(0x52, PIXEL_WIDTH - x - width);
-    /* Vertical GRAM end address */
-    ILI9325_WriteReg(0x53, PIXEL_WIDTH - x - 1);
-}
+void ILI9325_SetWindow(uint16_t x, uint16_t y, uint16_t width, uint16_t height);
 
 /**
   * @brief  Prepare write GRAM
   * @param  None
   * @retval None
   */
-inline void ILI9325_PrepareWrite(void)
+static inline void ILI9325_PrepareWrite(void)
 {
     ILI9325_SelectReg(CMD_WRITE_GRAM);
 }
@@ -189,7 +185,7 @@ inline void ILI9325_PrepareWrite(void)
   * @param  color: Pixel color (RGB565 format)
   * @retval None
   */
-inline void ILI9325_WritePixel(uint16_t x, uint16_t y, uint16_t color)
+static inline void ILI9325_WritePixel(uint16_t x, uint16_t y, uint16_t color)
 {
     /* Set cursor pos */
     ILI9325_SetCursor(x, y);
@@ -204,7 +200,7 @@ inline void ILI9325_WritePixel(uint16_t x, uint16_t y, uint16_t color)
   * @param  y: Specifies the Y top-left position
   * @retval Pixel color (RGB565 format)
   */
-inline uint16_t ILI9325_ReadPixel(uint16_t x, uint16_t y)
+static inline uint16_t ILI9325_ReadPixel(uint16_t x, uint16_t y)
 {
     /* Set cursor pos */
     ILI9325_SetCursor(x, y);
