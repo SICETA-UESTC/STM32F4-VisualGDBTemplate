@@ -92,27 +92,27 @@ void ILI9325_Init(uint8_t orientation)
     switch (orientation)
     {
         case LCD_ORIENTATION_0_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x03, 0x1030); /* AM=1, ID[1:0]=11 */
             ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
             ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;
         case LCD_ORIENTATION_90_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1018); /* AM=0, GRAM write direction horizontal */
+            ILI9325_WriteReg(0x03, 0x1038); /* AM=0, ID[1:0]=11 */
             ILI9325_WriteReg(0x01, 0x0000); /* SS=1, scan direction is S720~S1 */
             ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;
         case LCD_ORIENTATION_180_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x03, 0x1030); /* AM=1, ID[1:0]=11 */
             ILI9325_WriteReg(0x01, 0x0000); /* SS=0, scan direction is S1~S720 */
             ILI9325_WriteReg(0x60, 0x2700); /* GS=0, scan direction is G1~G320 */
             break;
         case LCD_ORIENTATION_270_DEGREE:
-            ILI9325_WriteReg(0x03, 0x1018); /* AM=0, GRAM write direction horizontal */
+            ILI9325_WriteReg(0x03, 0x1038); /* AM=0, ID[1:0]=11 */
             ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
             ILI9325_WriteReg(0x60, 0x2700); /* GS=1, scan direction is G320~G1 */
             break;
         default:
-            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, GRAM write direction vertical */
+            ILI9325_WriteReg(0x03, 0x1018); /* AM=1, ID[1:0]=11 */
             ILI9325_WriteReg(0x01, 0x0100); /* SS=1, scan direction is S720~S1 */
             ILI9325_WriteReg(0x60, 0xA700); /* GS=1, scan direction is G320~G1 */
             break;

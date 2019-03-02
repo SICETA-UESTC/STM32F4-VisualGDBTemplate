@@ -424,7 +424,7 @@ void LCD_DrawBitmapStream(const uint16_t *stream_buffer, uint16_t x, uint16_t y,
 {
 #if LCD_USE_FRAMEBUFFER
     for (size_t i = 0; i < height; i++) {
-        memcpy(s_framebuffer.PixelData + s_framebuffer.Width * y + x, img_buffer, width * 2);
+        memcpy(s_framebuffer.PixelData + s_framebuffer.Width * y + x, stream_buffer, width * 2);
     }
 #else
     SET_WINDOW(x, y, width, height);
