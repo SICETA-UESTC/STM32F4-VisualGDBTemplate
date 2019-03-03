@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file       ili9325.c
   * @author     Weng Xiaoran, SICEIEC-UESTC
-  * @date       2019.1.22
+  * @date       2019.3.3
   * @brief      ILI9341 TFT LCD low-level driver based on FSMC parallel port
   *
   * @note       You need to initialize FSMC in advance to use the driver

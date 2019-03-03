@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file       lcd.h
   * @author     Weng Xiaoran, SICEIEC-UESTC
-  * @date       2019.1.18
+  * @date       2019.3.3
   * @brief      Universal TFT LCD driver and basic drawing functions
   *
   * @note       You need to initialize FSMC in advance to use this module.
@@ -28,11 +28,12 @@
 #define ILI9325                     0x9325
 
 /* Backlight GPIO */
-#define LCD_BL_GPIO_PORT            GPIOA
-#define LCD_BL_GPIO_PIN             GPIO_PIN_6
+#define LCD_BL_GPIO_PORT            GPIOB
+#define LCD_BL_GPIO_PIN             GPIO_PIN_15
+#define LCD_BL_GPIO_CLK_ENABLE     __HAL_RCC_GPIOB_CLK_ENABLE
 
 /* LCD Configurations */
-#define LCD_DRIVER_IC               ILI9325
+#define LCD_DRIVER_IC               NT35510
 #define LCD_USE_FRAMEBUFFER         0
 #define LCD_USE_FATFS               0
 #define LCD_USE_FONTLIB             0

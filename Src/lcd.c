@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file       lcd.c
   * @author     Weng Xiaoran, SICEIEC-UESTC
-  * @date       2019.1.18
+  * @date       2019.3.3
   * @brief      Universal TFT LCD driver and basic drawing functions
   *
   * @note       You need to initialize FSMC in advance to use this module.
@@ -112,6 +112,8 @@ void LCD_Init(uint8_t orientation)
 #endif // LCD_USE_FRAMEBUFFER
 
     /* Initialize backlight GPIO */
+    LCD_BL_GPIO_CLK_ENABLE();
+
     GPIO_InitTypeDef GPIO_InitStruct;
     GPIO_InitStruct.Pin = LCD_BL_GPIO_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;

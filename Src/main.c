@@ -51,24 +51,20 @@ int main(void)
     TIM7_Init();
 
     /* Initialize USB Vitural COM Port */
-    //USB_DEVICE_Init();
+    USB_DEVICE_Init();
 
     /* Initialize system peripherals */
     DMA_Init();
     FSMC_Init();
-    USART1_UART_Init();
+    //USART1_UART_Init();
 
     /* Initialize Fat FileSystem for SD Card */
-    //FATFS_Init();
+    FATFS_Init();
 
     /* Initialize all external hardware */
-    //LED_Init();
-    LCD_Init(LCD_ORIENTATION_270_DEGREE);
-    LCD_DrawString("Lovely", 16, 16, 30, LAWNGREEN);
-    LCD_FillRect(128, 8, 32, 16, DODGERBLUE);
-    //LCD_SetFont(FONT_TYPE_SANS);
+    LED_Init();
 
-    //LCD_DrawBmpFromFile("0:/bmp/我就和你们一起玩.bmp", 0, 0);
+    LCD_Init(LCD_ORIENTATION_0_DEGREE);
 
     //LCD_FrameUpdate();
 
