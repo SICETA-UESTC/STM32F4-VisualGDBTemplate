@@ -115,7 +115,7 @@ size_t USART1_FIFO_ReadBytes(uint8_t *buffer, size_t length)
 {
     s_huart1_rx_fifo.WritePos = UART_RX_BUFFER_SIZE - __HAL_DMA_GET_COUNTER(huart1.hdmarx);
 
-    size_t avaliable_bytes_count = (s_huart1_rx_fifo.WritePos > s_huart1_rx_fifo.ReadPos)
+    size_t avaliable_bytes_count = (s_huart1_rx_fifo.WritePos >= s_huart1_rx_fifo.ReadPos)
                                     ? s_huart1_rx_fifo.WritePos - s_huart1_rx_fifo.ReadPos
                                     : UART_RX_BUFFER_SIZE + s_huart1_rx_fifo.WritePos - s_huart1_rx_fifo.ReadPos;
 

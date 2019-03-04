@@ -100,18 +100,18 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
         /* GPIO clock enable */
         __HAL_RCC_GPIOA_CLK_ENABLE();
 
-        /* USER CODE BEGIN USB_OTG_FS_MspInit 0 */
-        GPIO_InitStruct.Pin = GPIO_PIN_12;
-        GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-        GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-        HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+        ///* USER CODE BEGIN USB_OTG_FS_MspInit 0 */
+        //GPIO_InitStruct.Pin = GPIO_PIN_12;
+        //GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+        //GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+        //GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        //HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-        /* Simulate plug action, in case PC cannot enumerate USB device after reset */
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, RESET);
-        HAL_Delay(30);
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, SET);
-        HAL_Delay(30);
+        ///* Simulate plug action, in case PC cannot enumerate USB device after reset */
+        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, RESET);
+        //HAL_Delay(30);
+        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, SET);
+        //HAL_Delay(30);
 
         /* USER CODE END USB_OTG_FS_MspInit 0 */
 
